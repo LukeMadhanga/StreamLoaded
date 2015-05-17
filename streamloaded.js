@@ -25,6 +25,7 @@
                     offset: 100,
                     onbeforeload: ef,
                     oninit: ef,
+                    onimagereplace: ef,
                     onload: ef,
                     onscroll: ef
                 }, opts),
@@ -59,6 +60,7 @@
                                 return false;
                             }
                             T.replaceWith(img);
+                            data.s.onimagereplace.call(T, {image: img});
                         };
                         img.src = T[0].href;
                     }
@@ -70,6 +72,13 @@
             data.s.oninit.call(T);
             T.data('streamloadeddata', data);
             return T;
+        },
+        updateOpts: function (opts) {
+            return this.each(function () {
+                var data = $(this).data('streamloadeddata');
+                data.s = $.extend(data.s, opts);
+                $(this).data('streamloadeddata', data);
+            });
         }
     };
     
