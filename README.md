@@ -14,7 +14,7 @@ The unfortunate reality is that users don't always read articles down to the bot
 
 The `anchor` element that is being initialised will require a few attributes: 
 | name | Description |
-------|------ |
+------ | ------ |
 data-streamloaded-after | A plain object with all of the properties that should be applied to the created `<img/>`
 data-width | The width of the image
 data-height | The height of the image
