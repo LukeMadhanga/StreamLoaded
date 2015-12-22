@@ -31,6 +31,7 @@
                 }, opts),
                 drawingimage: false
             },
+            // Transparent 1px GIF
             src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
             T.append('<img class="streamloaded-img" src="' + src + '"/>');
             
@@ -76,6 +77,11 @@
             T.data('streamloadeddata', data);
             return T;
         },
+        /**
+         * Update the options for a given instance
+         * @param {object} opts A plain object with the properties to updates
+         * @returns {jQuery}
+         */
         updateOpts: function (opts) {
             return this.each(function () {
                 var data = $(this).data('streamloadeddata');
