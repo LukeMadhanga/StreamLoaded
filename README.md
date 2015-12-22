@@ -13,6 +13,7 @@ The unfortunate reality is that users don't always read articles down to the bot
 *NB, `$(function(){});` is just shorthand for `$(document).ready(function (){})`. Also, any element with the `.streamloaded` class will be initialised automatically*
 
 The `anchor` element that is being initialised will require a few attributes: 
+
 | name | Description |
 ------ | ------ |
 data-streamloaded-after | A plain object with all of the properties that should be applied to the created `<img/>`
