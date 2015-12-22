@@ -34,6 +34,9 @@
             src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
             T.append('<img class="streamloaded-img" src="' + src + '"/>');
             
+            /**
+             * Listen for when the image is almost in view
+             */
             data.listener = function () {
                 var coords = T[0].getBoundingClientRect(),
                 height = $(window).height(); 
@@ -67,7 +70,7 @@
                 }
             };
             
-            $(window).bind('scroll.streamloaded').bind('scroll.streamloaded', data.listener);
+            $(window).unbind('scroll.streamloaded').bind('scroll.streamloaded', data.listener);
             data.listener();
             data.s.oninit.call(T);
             T.data('streamloadeddata', data);
