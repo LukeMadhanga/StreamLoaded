@@ -53,7 +53,10 @@
                             return false;
                         }
                         var img = new Image(),
-                        attrs = T.data('streamloaded-after');
+                        // If the user set streamloaded-after from the server, then it is likely that they may have had to urlencode the
+                        //  data to not break html
+                        attrs = JSON.parse(decodeURIComponent(T.data('streamloaded-after')));
+                        T.data('streamloaded-after', attrs);
                         for (var x in attrs) {
                             // Apply all of the attributes supplied to the image
                             $(img).attr(x, attrs[x]);
